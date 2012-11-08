@@ -42,19 +42,6 @@ def init():
     gobject.timeout_add(
 	    config.TimeBetweenFrames,
 	    _update) #timer
-    #drawExample()
 
 
-def drawExample():
-    img=loadImage('foo.png')
-    pos=0,0
-    from drawable import DrawAble
-    global d
-    d=DrawAble(img,pos)
-    
-def drawExample2():
-    img=loadImage('foo.png')
-    pos=30,30
-    from drawable import DrawAble
-    d=DrawAble(img,pos)
 

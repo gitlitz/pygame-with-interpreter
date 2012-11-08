@@ -1,6 +1,5 @@
 import gtk,pygtk,pygame,os
 from static import config,tools
-
 from console import PythonConsole
 kill=None
 da=object
@@ -19,8 +18,7 @@ class GUI(gtk.Window):
         self.createPygameWindow()
 
         #interpreter
-        global da
-        pc=PythonConsole({"send":self.send,'da':da,'tools':tools}) #the user can use the self.send(x) function with "send(x)"
+        pc=PythonConsole() #the user can use the self.send(x) function with "send(x)"
         pc.set_size_request(config.WINX,config.InterpreterY)
         self.box.pack_start(pc,False,False,0)
         tools.interpreter=pc
@@ -53,18 +51,7 @@ class GUI(gtk.Window):
 
 def main():
     app = GUI()
-    drawExample()
     gtk.main()
-
-def drawExample():
-    global da
-    img=tools.loadImage('foo.png')
-    pos=0,0
-    from drawable import DrawAble
-    da=DrawAble(img,pos)
-    global kill
-    kill=da.activated
-
 
 if __name__ == "__main__":
     main()
