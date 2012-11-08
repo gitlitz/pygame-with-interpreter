@@ -37,7 +37,6 @@ class GUI(gtk.Window):
         os.putenv('SDL_WINDOWID', str(area.window.handle))
         gtk.gdk.flush()
         #################################
-        #################################
         pygame.init()
         tools.screen=pygame.display.set_mode((config.WINX, config.WINY), 0, 0)
         tools.init()
@@ -64,7 +63,7 @@ def drawExample():
     from drawable import DrawAble
     da=DrawAble(img,pos)
     global kill
-    kill=da.disable
+    kill=da.activated
 
 
 if __name__ == "__main__":

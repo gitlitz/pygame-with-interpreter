@@ -11,7 +11,7 @@ class SpriteBatch():
 
     def remove(self,drawAble):
         a=drawAble.zIndex,drawAble
-        self.draw.discard(a)
+        self.draw.remove(a)
 
     def drawNow(self):
 	c=tools.camera
