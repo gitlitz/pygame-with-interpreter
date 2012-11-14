@@ -34,7 +34,7 @@ def loadImage(imageName):
 def init():
     global camera,update,draw,spritebatch
     camera=[0,0]
-    update=[]
+    update=set()
     draw=[]
     from spritebatch import SpriteBatch
     spritebatch=SpriteBatch()
@@ -42,6 +42,3 @@ def init():
     gobject.timeout_add(
 	    config.TimeBetweenFrames,
 	    _update) #timer
-
-
-
