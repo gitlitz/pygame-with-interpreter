@@ -1,6 +1,8 @@
 import gtk,pygtk,pygame,os
 from static import config,tools
 from console import PythonConsole
+from games import Game1
+import os, sys
 kill=None
 da=object
 class GUI(gtk.Window):
@@ -12,9 +14,7 @@ class GUI(gtk.Window):
         window.set_resizable(False)
         #split the window
         self.box=gtk.VBox(False,2)
-
         window.add (self.box)
-    
         self.createPygameWindow()
 
         #interpreter
@@ -37,7 +37,6 @@ class GUI(gtk.Window):
         #################################
         pygame.init()
         tools.screen=pygame.display.set_mode((config.WINX, config.WINY), 0, 0)
-        tools.init()
 
 
     def destroy(self, window):
@@ -51,6 +50,7 @@ class GUI(gtk.Window):
 
 def main():
     app = GUI()
+    Game1()
     gtk.main()
 
 if __name__ == "__main__":

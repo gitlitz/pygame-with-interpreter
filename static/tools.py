@@ -6,7 +6,6 @@ colors={'black':(0,0,0),'white':(255,255,255)}
 camera=None
 update=None
 draw=None
-spritebatch=None
 
 import pygame
 import gobject
@@ -34,7 +33,7 @@ def loadImage(imageName):
 def init():
     global camera,update,draw,spritebatch
     camera=[0,0]
-    update=set()
+    update=[]
     draw=[]
     from spritebatch import SpriteBatch
     spritebatch=SpriteBatch()

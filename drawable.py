@@ -1,4 +1,4 @@
-from static.tools import spritebatch
+from static import tools
 class DrawAble(object):
     def __init__(self,image,position,zIndex=0,activated=True):
 	self.image=image
@@ -6,7 +6,6 @@ class DrawAble(object):
 	self._zIndex=zIndex
 	self.__activated=None
 	self.activated=activated
-
 
     def __del__(self):
 	self.activated=False
@@ -20,10 +19,10 @@ class DrawAble(object):
 #enabled
 
     def _disable(self):
-	spritebatch.remove(self)
+	tools.spritebatch.remove(self)
 
     def _enable(self):
-        spritebatch.add(self)
+        tools.spritebatch.add(self)
 
     def __setActivated(self,b):
 	if self.__activated!=b:

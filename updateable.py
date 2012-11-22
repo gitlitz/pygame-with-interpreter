@@ -1,7 +1,7 @@
 from static import tools
 class UpdateAble(object):
     def __init__(self):
-	tools.update.add(self.update)
+	tools.update.append(self.update)
     def update(self):
 	raise NotImplementedError()
     def __del__(self):
